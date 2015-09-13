@@ -1,0 +1,39 @@
+apply plugin: "java"
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+ext {
+    jodaVersion = '2.2'
+    jarFileName = 'tsol-server-gradle'
+    jarFileVersion = '0.1.0'
+    mainClassProject = 'net.tsol.App'
+    gradleVersion = '2.4'
+}
+
+dependencies {
+    compile "joda-time:joda-time:$jodaVersion@jar"
+}
+
+sourceSets {
+    main.java.srcDir "src/main"  // tell the user what is the main run folder
+    test.java.srcDir "src/test"  // tell the user what is the main run folder
+}
+
+jar {
+    from configurations.compile.collect { zipTree it}
+    manifest.attributes "Main-Class" : "$mainClassProject"  // tells which file is main
+    baseName = "$jarFileName"
+    version = "$jarFileVersion"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "$gradleVersion"
+}
+
+
+
