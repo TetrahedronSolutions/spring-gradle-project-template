@@ -1,4 +1,25 @@
+/**
+ * Buildscript will install the spring-boot dependicies before anything else.
+ *
+ * */
+buildscript {
+    ext {
+        springframeworkVersion = '1.2.5.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springframeworkVersion"
+    }
+}
+
 apply plugin: "java"
+//apply plugin: "application"
+apply plugin: "idea"
+apply plugin: 'spring-boot'
+
+//mainClassName = 'net.tsol.App'
 
 repositories {
     mavenCentral()
@@ -16,7 +37,12 @@ ext {
 }
 
 dependencies {
-    compile "joda-time:joda-time:$jodaVersion@jar"
+    compile "joda-time:joda-time:$jodaVersion@jar" //shorter less visual way to compile
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.springframework.boot:spring-boot-starter-web"
+
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+    testCompile group: 'junit', name: 'junit', version: '4.+' // long more visual way to compile
 }
 
 sourceSets {
@@ -25,8 +51,8 @@ sourceSets {
 }
 
 jar {
-    from configurations.compile.collect { zipTree it}
-    manifest.attributes "Main-Class" : "$mainClassProject"  // tells which file is main
+    //from configurations.compile.collect { zipTree it}
+    //manifest.attributes "Main-Class" : "$mainClassProject"  // tells which file is main
     baseName = "$jarFileName"
     version = "$jarFileVersion"
 }
