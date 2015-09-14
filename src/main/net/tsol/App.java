@@ -6,14 +6,19 @@ import org.joda.time.LocalTime;
 
 import net.tsol.contributions.Contribution;
 
+@SpringBootApplication
 public class App {
     public static void main(String[] args) {
-        Contribution newContrib = new Contribution();
+        /*Contribution newContrib = new Contribution();
         newContrib.setName("OpenStack");
         LocalTime currentTime = new LocalTime();
         System.out.println("The current local time is: " + currentTime);
         System.out.println("My current contributions have been to: " + newContrib.getName());
-        System.out.println("hello worlds");
+        System.out.println("hello worlds");*/
+        SpringApplication.run(App.class, args);
+
+
+
     }
 }
 
