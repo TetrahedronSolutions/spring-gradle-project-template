@@ -1,4 +1,4 @@
-package net.tsol.contributions;
+package net.tsol.contribution;
 
 public class Contribution {
     public Contribution() {}
@@ -9,6 +9,10 @@ public class Contribution {
 
     public String setUrl() { return url;}
     public void setUrl(String url) { this.url = url;}
+
+    public String toString() {
+      return "{name:"+name+"url:"+url+"}";
+    }
 
     private String name;
     private String url;

@@ -4,7 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.joda.time.LocalTime;
 
-import net.tsol.contributions.Contribution;
 
 @SpringBootApplication
 public class App {
