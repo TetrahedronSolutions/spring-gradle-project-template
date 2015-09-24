@@ -66,7 +66,7 @@ public class BusPassService {
         if (facts.size() == 0) {
             return null;
         }
-        // Assumes that the rules will always be generating a single bus pass. 
+        // Assumes that the rules will always be generating a single bus pass.
         return facts.get(0);
     }
 

@@ -13,12 +13,10 @@ public class ChildBusPass extends BusPass {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+
+        if (this == o) { return true; }
+        if (o == null || getClass() != o.getClass()) { return false; }
+
         ChildBusPass that = (ChildBusPass) o;
         return getPerson().equals(that.getPerson());
     }
@@ -27,5 +25,4 @@ public class ChildBusPass extends BusPass {
     public int hashCode() {
         return getPerson().hashCode();
     }
-
 }

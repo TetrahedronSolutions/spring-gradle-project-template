@@ -1,5 +1,10 @@
 package net.tsol.contribution;
 
+<<<<<<< HEAD
+=======
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMethod;
+>>>>>>> 891422b4818e15fc12beb78a890e07a28ed2fe72
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
