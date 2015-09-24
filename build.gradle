@@ -15,34 +15,45 @@ buildscript {
 }
 
 apply plugin: "java"
-//apply plugin: "application"
 apply plugin: "idea"
 apply plugin: 'spring-boot'
 
-//mainClassName = 'net.tsol.App'
+ext {
+    jarFileName = 'tsol-server-gradle'
+    jarFileVersion = '0.1.0'
+
+    mainClassProject = 'net.tsol.App'
+
+    droolsVersion = '6.1.0.Final'
+    gradleVersion = '2.4'
+    junitVersion = '4.+'
+}
 
 repositories {
     mavenCentral()
 }
 
+repositories {
+    maven {
+        name 'central'
+        url 'http://repo1.maven.org/maven2'
+    }
+    maven {
+        name 'jboss'
+        url 'http://repository.jboss.org/nexus/content/groups/public-jboss'
+    }
+}
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-ext {
-    jodaVersion = '2.2'
-    jarFileName = 'tsol-server-gradle'
-    jarFileVersion = '0.1.0'
-    mainClassProject = 'net.tsol.App'
-    gradleVersion = '2.4'
-}
-
 dependencies {
-    compile "joda-time:joda-time:$jodaVersion@jar" //shorter less visual way to compile
     compile "org.springframework.boot:spring-boot-starter-web"
-    compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.kie:kie-ci:$droolsVersion"
 
     testCompile "org.springframework.boot:spring-boot-starter-test"
-    testCompile group: 'junit', name: 'junit', version: '4.+' // long more visual way to compile
+    testCompile "junit:junit:$junitVersion"
+    //testCompile group: 'junit', name: 'junit', version: '4.+'
 }
 
 sourceSets {
@@ -51,8 +62,6 @@ sourceSets {
 }
 
 jar {
-    //from configurations.compile.collect { zipTree it}
-    //manifest.attributes "Main-Class" : "$mainClassProject"  // tells which file is main
     baseName = "$jarFileName"
     version = "$jarFileVersion"
 }
@@ -60,6 +69,3 @@ jar {
 task wrapper(type: Wrapper) {
     gradleVersion = "$gradleVersion"
 }
-
-
-
