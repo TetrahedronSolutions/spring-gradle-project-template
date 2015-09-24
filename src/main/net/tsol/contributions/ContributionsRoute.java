@@ -3,7 +3,6 @@ package net.tsol.contributions;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
@@ -20,8 +19,6 @@ public class ContributionsRoute {
 
         for(int x = 0; x < 3; x++){
             Contribution item = new Contribution("potato", "potato");
-            //item.setName("potato");
-            //item.setUrl("someurl.com");
             list.add(item);
         }
 
