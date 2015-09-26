@@ -46,6 +46,7 @@ public class BusPassService {
      * Search the {@link KieSession} for bus passes.
      */
     private BusPass findBusPass(KieSession kieSession) {
+
         // Find all BusPass facts and 1st generation child classes of BusPass.
         ObjectFilter busPassFilter = new ObjectFilter() {
             @Override
@@ -57,6 +58,7 @@ public class BusPassService {
         };
 
         // printFactsMessage(kieSession);
+
         List<BusPass> facts = new ArrayList<BusPass>();
         for (FactHandle handle : kieSession.getFactHandles(busPassFilter)) {
             facts.add((BusPass) kieSession.getObject(handle));
@@ -64,7 +66,7 @@ public class BusPassService {
         if (facts.size() == 0) {
             return null;
         }
-        // Assumes that the rules will always be generating a single bus pass. 
+        // Assumes that the rules will always be generating a single bus pass.
         return facts.get(0);
     }
 
