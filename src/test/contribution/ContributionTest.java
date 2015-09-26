@@ -4,9 +4,6 @@ import static org.junit.Assert.*;
 import org.junit.*;
 import net.tsol.contribution.Contribution;
 
-/**
- * Created by German on 9/26/2015.
- */
 public class ContributionTest {
 
     @Test
