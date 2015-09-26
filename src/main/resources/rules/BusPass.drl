@@ -1,36 +1,14 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 package com.sctrcd.busspassws.rules;
-=======
-package com.sctrcd.busspassws.rules
->>>>>>> 891422b... added-drools-rules
-=======
-package com.sctrcd.busspassws.rules;
->>>>>>> a98aa31cafeac945fc1e6e7b16afaba9bdcc9e0c
 
 import net.tsol.sctrcd.buspassws.facts.*;
 
 
 declare IsAdult
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a98aa31cafeac945fc1e6e7b16afaba9bdcc9e0c
     person: Person
 end
 declare IsChild
     person: Person
-<<<<<<< HEAD
-=======
-	person: Person
 end
-declare IsChild
-	person: Person
->>>>>>> 891422b... added-drools-rules
-=======
->>>>>>> a98aa31cafeac945fc1e6e7b16afaba9bdcc9e0c
-end
-
 
 rule IsChildPolicy when
     p : Person( age < 16 )
