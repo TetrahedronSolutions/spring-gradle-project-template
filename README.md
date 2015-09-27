@@ -16,3 +16,6 @@ We want to explore the uses of a Java Dev Stack consisting of:
 ## How-to Run
 * `gradle build`
 * `java -jar build/libs/*`
+
+## Practices
+* [Linting](https://github.com/google/styleguide)
