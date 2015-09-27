@@ -14,8 +14,8 @@ public class AdultBusPass extends BusPass {
     @Override
     public boolean equals(Object o) {
 
-        if (this == o) { return true; }
-        if (o == null || getClass() != o.getClass()) { return false; }
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
         AdultBusPass that = (AdultBusPass) o;
         return getPerson().equals(that.getPerson());
