@@ -28,8 +28,8 @@ public class BusPass {
     @Override
     public boolean equals(Object o) {
 
-        if (this == o) { return true; }
-        if (o == null || getClass() != o.getClass()) { return false; }
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
         BusPass that = (BusPass) o;
         return this.person.equals(that.person);
