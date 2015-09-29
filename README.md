@@ -19,3 +19,4 @@ We want to explore the uses of a Java Dev Stack consisting of:
 
 ## Practices
 * [Linting](https://github.com/google/styleguide)
+* [Database-Connection](http://www.mkyong.com/spring/maven-spring-jdbc-example/)
