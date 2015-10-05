@@ -18,15 +18,22 @@ apply plugin: "java"
 apply plugin: "idea"
 apply plugin: 'spring-boot'
 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 ext {
     jarFileName = 'tsol-server-gradle'
     jarFileVersion = '0.1.0'
 
     mainClassProject = 'net.tsol.App'
+    projectApp = 'net.tsol'
 
     droolsVersion = '6.1.0.Final'
     gradleVersion = '2.4'
     junitVersion = '4.+'
+
+    workPath = "src\\main\\net\\tsol"
+    testPath = 'src/test/'
 }
 
 repositories {
@@ -50,17 +57,13 @@ test {
     }
 }
 
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 dependencies {
     compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.springframework:spring-jdbc"
     compile "org.kie:kie-ci:$droolsVersion"
 
     testCompile "org.springframework.boot:spring-boot-starter-test"
     testCompile "junit:junit:$junitVersion"
-    //testCompile group: 'junit', name: 'junit', version: '4.+'
 }
 
 sourceSets {
@@ -75,4 +78,18 @@ jar {
 
 task wrapper(type: Wrapper) {
     gradleVersion = "$gradleVersion"
+}
+
+task module() {
+    //println Character.toUpperCase($mod.charAt(0)) + $mod.substring(1);
+
+    File path = new File(".\\" + "$workPath" + "\\"  + "$mod");
+    if(!path.exists()){
+        path.mkdir();
+    }
+    PrintWriter writer = new PrintWriter("$workPath" + "\\$mod\\"+ "$mod"+'.java')
+    writer.write("package $projectApp.$mod;")
+    writer.write("class $mod { public $mod(){} }")
+
+    writer.close()
 }
