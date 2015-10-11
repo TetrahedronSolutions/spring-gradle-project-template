@@ -2,11 +2,11 @@
 
 ## Description
 We want to explore the uses of a Java Dev Stack consisting of:
-* Java
-* Gradle
-* Drools
-* JUnit
-* Spring Boot
+* Java @latest
+* Gradle 2.5
+* Drools 6.1
+* JUnit 4.*
+* Spring Boot @latest
 * Ubuntu 14.04 LTS
 
 ## Set-up:
@@ -19,4 +19,23 @@ We want to explore the uses of a Java Dev Stack consisting of:
 
 ## Practices
 * [Linting](https://github.com/google/styleguide)
-* [Database-Connection](http://www.mkyong.com/spring/maven-spring-jdbc-example/)
+* [Database-Connection](https://spring.io/guides/gs/relational-data-access/)
+* [Spring-Dockerization](http://spring.io/guides/gs/spring-boot-docker/)
+* [REST-Services](https://spring.io/guides/tutorials/bookmarks/)
+* [Model Validation](http://spring.io/guides/gs/validating-form-input/)
+
+## File Structures
+- gradle
+- src
+    |_main
+    |  |_net
+    |      |_tsol
+    |          |_modules
+    |              |_module_services
+    |              |_module_router_controller
+    |_resources
+    |  |_rules
+    |       |_rule_file
+    |_test
+        |_test_module
+            |_module_unit_test
