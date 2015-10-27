@@ -42,7 +42,7 @@ Services are where all the Business Logic is placed. Services will communicate
 with Repository to get data and be accessed by Routes/Controllers
 
 ## File Structures
-'''
+```
   build.gradle
   src
     |_main
@@ -60,4 +60,4 @@ with Repository to get data and be accessed by Routes/Controllers
     |_test
         |_test_module
             |_module_unit_test
-'''
+```
