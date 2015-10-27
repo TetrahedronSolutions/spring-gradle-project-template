@@ -27,17 +27,17 @@ We want to explore the uses of a Java Dev Stack consisting of:
 
 # Moduel Types
 When to use different components/annotations in your application
-## Repository
+### Repository
 Repository modules are generally used when supplying some type of data
 extraction in your application
-## Routes/Controller
+### Routes/Controller
 Routes/Controllers are a very simplistic method call to a service or Repository
 to get data. If your methods grow bigger than a simple method call to service
 than your need to more that code to the Service or Repository
-## Model
+### Model
 Models are used to define data objects when extracted from the database and used
 to return the JSON object
-## Services
+### Services
 Services are where all the Business Logic is placed. Services will communicate
 with Repository to get data and be accessed by Routes/Controllers
 
