@@ -27,19 +27,62 @@ We want to explore the uses of a Java Dev Stack consisting of:
 
 # Moduel Types
 When to use different components/annotations in your application
+
 ### Repository
 Repository modules are generally used when supplying some type of data
 extraction in your application
+
+```
+  import org.springframework.stereotype.Repository;
+  @Repository
+  public class TemplateRepository {
+    ...
+  }
+```
+
 ### Routes/Controller
 Routes/Controllers are a very simplistic method call to a service or Repository
 to get data. If your methods grow bigger than a simple method call to service
 than your need to more that code to the Service or Repository
+
+```
+  import org.springframework.web.bind.annotation.RestController;
+  import org.springframework.web.bind.annotation.RequestMapping;
+
+  @RestController
+  @RequestMapping(value="/template")
+  public class TemplateRoute {
+    ...
+  }
+```
+
 ### Model
 Models are used to define data objects when extracted from the database and used
-to return the JSON object
+to return the JSON object. Use the `@Data` annotation for your models in order
+to create all your gets, sets, and constructors.
+
+```
+  import lombok.Data;
+
+  @Data
+  public class Template {
+    private int id;
+    ...
+  }
+```
+
 ### Services
 Services are where all the Business Logic is placed. Services will communicate
-with Repository to get data and be accessed by Routes/Controllers
+with Repository to get data and be accessed by Routes/Controllers.
+
+```
+  import org.springframework.stereotype.Service;
+
+  @Service
+  public class TemplateServices {
+    ...
+  }
+```
 
 ## File Structures
 ```
