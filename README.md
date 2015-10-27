@@ -2,7 +2,7 @@
 
 ## Description
 We want to explore the uses of a Java Dev Stack consisting of:
-* Java @latest
+* Java (7 or 8)
 * Gradle 2.5
 * Drools 6.1
 * JUnit 4.*
@@ -19,13 +19,15 @@ We want to explore the uses of a Java Dev Stack consisting of:
 
 ## Practices
 * [Linting](https://github.com/google/styleguide)
-* [Database-Connection](https://spring.io/guides/gs/relational-data-access/)
 * [Spring-Dockerization](http://spring.io/guides/gs/spring-boot-docker/)
 * [REST-Services](https://spring.io/guides/tutorials/bookmarks/)
 * [Model Validation](http://spring.io/guides/gs/validating-form-input/)
 * [Different module Components](http://javapapers.com/spring/spring-component-service-repository-controller-difference/)
+* [Database connections example](https://github.com/spring-projects/spring-data-jpa-examples)
+* [Database-Connection](https://spring.io/guides/gs/relational-data-access/)
+* [Spring Database Libs](http://projects.spring.io/spring-data/#quick-start)
 
-# Moduel Types
+# Module Types
 When to use different components/annotations in your application
 
 ### Repository
