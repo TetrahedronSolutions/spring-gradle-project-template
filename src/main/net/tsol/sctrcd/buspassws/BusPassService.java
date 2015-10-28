@@ -1,8 +1,7 @@
 package net.tsol.sctrcd.buspassws;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import net.tsol.sctrcd.buspassws.facts.BusPass;
+import net.tsol.sctrcd.buspassws.facts.Person;
 
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
@@ -13,8 +12,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import net.tsol.sctrcd.buspassws.facts.BusPass;
-import net.tsol.sctrcd.buspassws.facts.Person;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 @Service
 public class BusPassService {
@@ -30,8 +30,8 @@ public class BusPassService {
     }
 
     /**
-     * Create a new session, insert a person's details and fire rules to
-     * determine what kind of bus pass is to be issued.
+     * Create a new session, insert a person's details and fire rules to determine what kind of bus
+     * pass is to be issued.
      */
     public BusPass getBusPass(Person person) {
         KieSession kieSession = kieContainer.newKieSession("BusPassSession");
@@ -71,8 +71,7 @@ public class BusPassService {
     }
 
     /**
-     * Print out details of all facts in working memory.
-     * Handy for debugging.
+     * Print out details of all facts in working memory. Handy for debugging.
      */
     @SuppressWarnings("unused")
     private void printFactsMessage(KieSession kieSession) {
