@@ -19,8 +19,8 @@ apply plugin: "idea"
 apply plugin: 'spring-boot'
 apply from: 'provided.gradle'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
 
 ext {
     jarFileName = 'tsol-server-gradle'
@@ -60,10 +60,11 @@ test {
 }
 
 dependencies {
+    provided "org.projectlombok:lombok:$lombokVersion"
+    
     compile "org.springframework.boot:spring-boot-starter-web"
     compile "org.springframework:spring-jdbc"
     compile "org.kie:kie-ci:$droolsVersion"
-    compile "org.projectlombok:lombok:$lombokVersion"
 
     testCompile "org.springframework.boot:spring-boot-starter-test"
     testCompile "junit:junit:$junitVersion"

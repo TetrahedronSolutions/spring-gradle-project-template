@@ -1,10 +1,14 @@
 package net.tsol.contribution;
 
-import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
-@RestController
+import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+
+@Service
 public class ContributionService {
-    public Contribution getContribution() {
-        return new Contribution();
-    }
+  @Autowired private ContributionRepository db;
+  public List<Contribution> getContribution() {
+    return db.getContributions();
+  }
 }
