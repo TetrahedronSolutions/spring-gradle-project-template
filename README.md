@@ -46,7 +46,13 @@ extraction in your application
 ### Routes/Controller
 Routes/Controllers are a very simplistic method call to a service or Repository
 to get data. If your methods grow bigger than a simple method call to service
-than your need to more that code to the Service or Repository
+than your need to more that code to the Service or Repository.
+
+As you have seen in the documentation we call all our controllers Routes.
+The reason for this is because the controller/route files functionality is only
+this is the path to hit this services and this is the service method. Hence,
+the name controller seems incorrect. Route is better since its just a path to
+a service.
 
 ```
   import org.springframework.web.bind.annotation.RestController;
@@ -63,6 +69,8 @@ than your need to more that code to the Service or Repository
 Models are used to define data objects when extracted from the database and used
 to return the JSON object. Use the `@Data` annotation for your models in order
 to create all your gets, sets, and constructors.
+
+NOTE: The lib lombok is a very affective tool for model creation
 
 ```
   import lombok.Data;
@@ -95,13 +103,9 @@ file structure in which there were 3 folder that hold all your Models,
 Controller, and Views. Since this application is only back-end we have
 eliminated the view components. However if we wanted to get a list of
 contributers from our database we would have all the files relating to the
-extraction of contributers will be placed in one folder.
-
-As you have seen in the documentation we call all our controllers Routes.
-The reason for this is because the controller/route files functionality is only
-this is the path to hit this services and this is the service method. Hence,
-the name controller seems incorrect. Route is better since its just a path to
-a service.
+extraction of contributers will be placed in one folder. Module Base
+file structure increase ramp up speed in a project for new guys. Everything
+module related is in one location (Really effective when you are bug fixing). 
 
 ```
   build.gradle
