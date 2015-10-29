@@ -88,21 +88,36 @@ with Repository to get data and be accessed by Routes/Controllers.
 ```
 
 ## File Structures
+
+The File architecture that we are utilizing follows modularized components.
+In prior experiences with a MVC framework, the biggest problems was the old
+file structure in which there were 3 folder that hold all your Models,
+Controller, and Views. Since this application is only back-end we have
+eliminated the view components. However if we wanted to get a list of
+contributers from our database we would have all the files relating to the
+extraction of contributers will be placed in one folder.
+
+As you have seen in the documentation we call all our controllers Routes.
+The reason for this is because the controller/route files functionality is only
+this is the path to hit this services and this is the service method. Hence,
+the name controller seems incorrect. Route is better since its just a path to
+a service.
+
 ```
   build.gradle
   src
     |_main
     |  |_net
-    |      |_tsol
-    |          |_modules
-    |              |_module_services
-    |              |_module_router_controller
-    |              |_module_repository
-    |              |_module_repository
-    |              |_module_Model_Object
-    |_resources
-    |  |_rules
-    |       |_rule_file
+    |  |    |_tsol
+    |  |        |_modules
+    |  |            |_module_services
+    |  |            |_module_router_controller
+    |  |            |_module_repository
+    |  |            |_module_repository
+    |  |            |_module_Model_Object
+    |  |_resources
+    |    |_rules
+    |         |_rule_file
     |_test
         |_test_module
             |_module_unit_test
