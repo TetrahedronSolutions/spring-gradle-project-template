@@ -11,12 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/api")
 public class ContributionRoute {
 
-    @Autowired private ContributionService contributionService;
+  @Autowired private ContributionService contributionService;
 
-    @RequestMapping(value = "/contributions",
-            method = RequestMethod.GET,
-            produces = "application/json")
-    public List<Contribution> getContributions() {
-        return this.contributionService.getContribution();
-    }
+  @RequestMapping(value = "/contributions", method = RequestMethod.GET,
+                  produces = "application/json")
+  public List<Contribution> getContributions() {
+    return this.contributionService.getContribution();
+  }
 }
