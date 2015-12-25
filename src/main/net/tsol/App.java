@@ -13,26 +13,25 @@ import java.util.Arrays;
 
 @SpringBootApplication
 public class App {
-    private static Logger log = LoggerFactory.getLogger(App.class);
+  private static Logger log = LoggerFactory.getLogger(App.class);
 
-    public static void main(String[] args) {
-        ApplicationContext ctx = SpringApplication.run(App.class, args);
+  public static void main(String[] args) {
+    ApplicationContext ctx = SpringApplication.run(App.class, args);
 
-        String[] beanNames = ctx.getBeanDefinitionNames();
-        Arrays.sort(beanNames);
+    String[] beanNames = ctx.getBeanDefinitionNames();
+    Arrays.sort(beanNames);
 
-        StringBuilder sb = new StringBuilder("Application beans:\n");
+    StringBuilder sb = new StringBuilder("Application beans:\n");
 
-        for (String beanName : beanNames) {
-            sb.append(beanName + "\n");
-        }
-
-        log.info(sb.toString());
+    for (String beanName : beanNames) {
+        sb.append(beanName + "\n");
     }
 
-    @Bean
-    public KieContainer kieContainer() {
-        return KieServices.Factory.get().getKieClasspathContainer();
-    }
+    log.info(sb.toString());
+  }
+
+  @Bean
+  public KieContainer kieContainer() {
+    return KieServices.Factory.get().getKieClasspathContainer();
+  }
 }
-

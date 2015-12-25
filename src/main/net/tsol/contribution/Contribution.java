@@ -11,7 +11,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @Data
 public class Contribution {
-    @NotNull
-    private List<String> names;
-    private String url;
+  @NotNull
+  private List<String> names;
+  private String url;
 }
